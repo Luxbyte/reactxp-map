@@ -6,6 +6,15 @@ This app works on React Native (iOS, Android) and web.
 
 - Run `npm install`. This fetches the dependencies.
 
+### Set Google Maps API key
+
+[react-native-maps setup instructions](https://github.com/react-community/react-native-maps/blob/master/docs/installation.md)
+
+Set the API key by replacing `YOUR_API_KEY` in:
+- Web: `src/App.jsx`
+- Android: `android/app/src/main/AndroidManifest.xml`
+- iOS: `ios/RXPMapTest/AppDelegate.m`
+
 ### Building for Web
 
 - Run `npm run build`. This transpiles the ES6 code.
