@@ -2,4 +2,7 @@
 /src/.vs
 /src/bin
 /src/obj
+/samples
+/docs
+/extensions
 *.user
