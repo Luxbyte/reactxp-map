@@ -88,7 +88,7 @@ class ReactXPMap extends React.Component {
         location={this.state.location}
         getMap={this.getMap}
         markers={this.props.markers || []}
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzqsmDN0UZEvAVsRsn9MfuYk3S7NhBTk0&v=3.exp&libraries=geometry,drawing,places"
+        googleMapURL={"https://maps.googleapis.com/maps/api/js?key="+this.props.apiKey+"&v=3.exp&libraries=geometry,drawing,places"}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<RX.View style={this.props.style || {}} />}
         mapElement={<div style={{ height: `100%` }} ref="map" />}
