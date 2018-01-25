@@ -1,6 +1,6 @@
 {
   "name": "reactxp-map",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Plugin for ReactXP that provides support for Google Maps for Web, Android and iOS",
   "author": "Luxbyte <contact@luxbyte.com>",
   "license": "MIT",
