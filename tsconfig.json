@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "declaration": false,
+        "noResolve": false,
+        "jsx": "react",
+        "module": "commonjs",
+        "target": "es5",
+        "experimentalDecorators": true,
+        "noImplicitAny": true,
+        "allowJs": true,
+        "outDir": "./dist/"
+    },
+
+    "include": [
+        "./src/**/*"
+    ],
+
+    "exclude": [
+        "dist",
+        "node_modules"
+    ]
+}
