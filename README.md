@@ -31,6 +31,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | latitude     | Float           |          | Initial latitude of the map |
 | longitude    | Float           |          | Initial longitude of the map |
 | zoom         | Integer         | 8        | Initial zoom level of the map |
+| mapType      | String          | "roadmap" | Type of the map. Can be `"roadmap"`, `"satellite"`, `"hybrid"` or `"terrain"`. |
 | showLocation | Boolean         | false    | Enable location tracking if available |
 | locationText | String          | "Your current location" | Text displayed by the marker on the user location |
 | markers      | List of Markers | [] | List of Marker objects to be displayed on the map. Each marker is defined by `latitude`, `longitude`, `title`, `description` and `color` |
