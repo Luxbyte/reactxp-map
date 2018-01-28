@@ -25,6 +25,7 @@ class App extends RX.Component {
                   {latitude: 50, longitude: 6, title: "Hello World2", description: "This is a description2.", color: "2fb6ab"},
                   {latitude: 49.5, longitude: 6.2, title: "Hello World3", description: "This is a description3."}]}
         zoom={10}
+        mapType="hybrid"
         latitude={-37.823726}
         longitude={145.0189628}
         showLocation={true}

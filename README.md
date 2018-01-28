@@ -1,10 +1,8 @@
 # reactxp-map [![npm version](https://img.shields.io/npm/v/reactxp-map.svg?style=flat)](https://www.npmjs.com/package/reactxp-map)
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
-## Updates (Version 0.0.6)
-* Customizable marker colors
-* Fixed zoom level on android and iOS
-* Removed incorrect marker when location unknown
+## Updates (Version 0.0.7)
+* MapTypes
 
 ## Documentation
 

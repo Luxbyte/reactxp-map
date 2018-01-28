@@ -21,6 +21,13 @@ const _styles = {
   }
 };
 
+const MapType = {
+  'roadmap': 'standard',
+  'satellite': 'satellite',
+  'terrain': 'terrain',
+  'hybrid': 'hybrid'
+}
+
 class ReactXPMap extends React.Component {
   constructor(props) {
     super(props);
@@ -93,6 +100,7 @@ class ReactXPMap extends React.Component {
             longitudeDelta: delta.longitude
           }}
           provider="google"
+          mapType={MapType[this.props.mapType] || "standard"}
         >
           {this.props.showLocation && this.state.location &&
             <MapView.Marker

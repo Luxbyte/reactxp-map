@@ -19,6 +19,8 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
       defaultCenter={{ lat: props.la, lng: props.lng }}
       zoom={props.zoom}
       center={{ lat: props.lat, lng: props.lng }}
+      defaultMapTypeId={'roadmap'}
+      mapTypeId={props.mapType}
     >
       {props.showLocation && props.location &&
         <Marker position={{ lat: props.location.latitude, lng: props.location.longitude }}
@@ -97,6 +99,7 @@ class ReactXPMap extends React.Component {
         lat={parseFloat(this.props.latitude)}
         lng={parseFloat(this.props.longitude)}
         zoom={this.props.zoom}
+        mapType={this.props.mapType}
         showLocation={this.props.showLocation}
         location={this.state.location}
         locationText={this.props.locationText}
