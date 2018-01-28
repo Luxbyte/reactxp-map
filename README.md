@@ -1,7 +1,7 @@
 # reactxp-map [![npm version](https://img.shields.io/npm/v/reactxp-map.svg?style=flat)](https://www.npmjs.com/package/reactxp-map)
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
-## Updates (Version 0.0.7)
+## Updates (Version 0.0.8)
 * MapTypes
 
 ## Documentation
