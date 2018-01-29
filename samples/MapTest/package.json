@@ -23,6 +23,6 @@
     "react-dom": "16.2.0",
     "react-native": "^0.51.0",
     "reactxp": "^0.51.1",
-    "reactxp-map": "^0.0.8"
+    "reactxp-map": "^0.1.0"
   }
 }

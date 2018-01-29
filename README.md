@@ -1,8 +1,9 @@
 # reactxp-map [![npm version](https://img.shields.io/npm/v/reactxp-map.svg?style=flat)](https://www.npmjs.com/package/reactxp-map)
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
-## Updates (Version 0.0.8)
-* MapTypes
+## Updates (Version 0.1.0)
+* Reorganized Markers as components
+* Added onPress callback to markers
 
 ## Documentation
 
@@ -12,17 +13,19 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 ### Usage
 ```javascript
 <ReactXPMap
-    style={_styles.container}
-    markers={[{latitude: 49.6106573, longitude: 6.1293375, title: "Hello World", description: "This is a description.", color: "00c00c"},
-              {latitude: 50, longitude: 6, title: "Hello World2", description: "This is a description2.", color: "2fb6ab"},
-              {latitude: 49.5, longitude: 6.2, title: "Hello World3", description: "This is a description3."}]}
-    zoom={10}
-    latitude={-37.823726}
-    longitude={145.0189628}
-    showLocation={true}
-    locationText="You are here!"
-    apiKey="YOUR_API_KEY"
-/>
+  style={_styles.container}
+  zoom={10}
+  mapType="roadmap"
+  latitude={49.6106573}
+  longitude={6.1293375}
+  showLocation={true}
+  locationText="You are here!"
+  apiKey="YOUR_API_KEY"
+>
+  <Marker latitude={49.6106573} longitude={6.1293375} title="Hello World" description="test" color="00c00c" onPress={this.showMessage}/>
+  <Marker latitude={50} longitude={6} title="title2" description="test2" color="2fb6ab" onPress={this.showMessage}/>
+  <Marker latitude={49.5} longitude={6.2} title="title3" description="test3" onPress={this.showMessage}/>
+</ReactXPMap>
 ```
 
 ### Map Properties
@@ -34,7 +37,6 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | mapType      | String          | "roadmap" | Type of the map. Can be `"roadmap"`, `"satellite"`, `"hybrid"` or `"terrain"`. |
 | showLocation | Boolean         | false    | Enable location tracking if available |
 | locationText | String          | "Your current location" | Text displayed by the marker on the user location |
-| markers      | List of Markers | [] | List of Marker objects to be displayed on the map. Each marker is defined by `latitude`, `longitude`, `title`, `description` and `color` |
 | apiKey       | String          | "YOUR_API_KEY" | The Google maps [API key](https://developers.google.com/maps/documentation/javascript/get-api-key) |
 | style        | StyleObject     | {} | [ReactXP style object](https://microsoft.github.io/reactxp/docs/styles.html) |
 
@@ -46,6 +48,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | title        | String          | ""       | Title of the marker |
 | description  | String          | ""       | Description of the marker (Native only) |
 | color        | HexCode         | "FE7569" | Color of the marker |
+| onPress      | Function        |          | Callback that is triggered when pressing on the marker. Returns `{latitude, longitude}` |
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

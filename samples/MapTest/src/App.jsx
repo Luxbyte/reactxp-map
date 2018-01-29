@@ -4,7 +4,8 @@
 
 let React, RX;
 React = RX = require('reactxp');
-let ReactXPMap = require('reactxp-map');
+
+let { ReactXPMap, Marker } = require('reactxp-map');
 
 const _styles = {
   container: RX.Styles.createViewStyle({
@@ -17,21 +18,27 @@ class App extends RX.Component {
     super(props);
   }
 
+  showMessage = (e) => {
+    console.log('pressed!')
+    console.log(e)
+  }
+
   render() {
     return (
       <ReactXPMap
         style={_styles.container}
-        markers={[{latitude: 49.6106573, longitude: 6.1293375, title: "Hello World", description: "This is a description.", color: "00c00c"},
-                  {latitude: 50, longitude: 6, title: "Hello World2", description: "This is a description2.", color: "2fb6ab"},
-                  {latitude: 49.5, longitude: 6.2, title: "Hello World3", description: "This is a description3."}]}
         zoom={10}
-        mapType="hybrid"
-        latitude={-37.823726}
-        longitude={145.0189628}
+        mapType="roadmap"
+        latitude={49.6106573}
+        longitude={6.1293375}
         showLocation={true}
         locationText="You are here!"
         apiKey="YOUR_API_KEY"
-      />
+      >
+        <Marker latitude={49.6106573} longitude={6.1293375} title="Hello World" description="test" color="00c00c" onPress={this.showMessage}/>
+        <Marker latitude={50} longitude={6} title="title2" description="test2" color="2fb6ab" onPress={this.showMessage}/>
+        <Marker latitude={49.5} longitude={6.2} title="title3" description="test3" onPress={this.showMessage}/>
+      </ReactXPMap>
     );
   }
 };

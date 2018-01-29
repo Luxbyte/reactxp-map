@@ -9,7 +9,8 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
 let RX = require('reactxp');
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+let Marker = require('./Marker');
+import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps"
 
 const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
   return (
@@ -23,18 +24,12 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
       mapTypeId={props.mapType}
     >
       {props.showLocation && props.location &&
-        <Marker position={{ lat: props.location.latitude, lng: props.location.longitude }}
+        <Marker latitude={props.location.latitude}
+                longitude={props.location.longitude}
                 title={props.locationText || "Your current location"}
-                icon="https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FE7569" />
+        />
       }
-      {props.markers.map(function (item, index) {
-        return (
-          <Marker position={{ lat: parseFloat(item.latitude), lng: parseFloat(item.longitude) }}
-                  title={item.title || ""}
-                  icon={"https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|"+(item.color || "FE7569")}
-                  key={index} />
-        );
-      })}
+      {props.children}
     </GoogleMap>
   )
 }));
@@ -96,20 +91,21 @@ class ReactXPMap extends React.Component {
   render() {
     return (
       <GoogleMapComponent
-        lat={parseFloat(this.props.latitude)}
-        lng={parseFloat(this.props.longitude)}
+        lat={this.props.latitude}
+        lng={this.props.longitude}
         zoom={this.props.zoom}
         mapType={this.props.mapType}
         showLocation={this.props.showLocation}
         location={this.state.location}
         locationText={this.props.locationText}
         getMap={this.getMap}
-        markers={this.props.markers || []}
         googleMapURL={"https://maps.googleapis.com/maps/api/js?key="+this.props.apiKey+"&v=3.exp&libraries=geometry,drawing,places"}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<RX.View style={this.props.style || {}} />}
         mapElement={<div style={{ height: `100%` }} ref="map" />}
-      />
+      >
+        {this.props.children}
+      </GoogleMapComponent>
     );
   }
 }

@@ -10,6 +10,7 @@ let React = require('react');
 let RX = require('reactxp');
 let ReactDOM = require('react-dom');
 let MapView = require('react-native-maps');
+let Marker = require('./Marker');
 
 const _styles = {
   map: {
@@ -94,8 +95,8 @@ class ReactXPMap extends React.Component {
         <MapView
           style={ _styles.map }
           initialRegion={{
-            latitude: parseFloat(this.props.latitude) || 49.8094603,
-            longitude: parseFloat(this.props.longitude) || 6.1282112,
+            latitude: this.props.latitude,
+            longitude: this.props.longitude,
             latitudeDelta: delta.latitude,
             longitudeDelta: delta.longitude
           }}
@@ -103,22 +104,12 @@ class ReactXPMap extends React.Component {
           mapType={MapType[this.props.mapType] || "standard"}
         >
           {this.props.showLocation && this.state.location &&
-            <MapView.Marker
-              coordinate={this.state.location}
-              title={this.props.locationText || "Your current location"}
+            <Marker latitude={this.state.location.latitude}
+                    longitude={this.state.location.longitude}
+                    title={this.props.locationText|| "Your current location"}
             />
           }
-          {this.props.markers.map(function (item, index) {
-            return (
-              <MapView.Marker
-                coordinate={{ latitude: parseFloat(item.latitude), longitude: parseFloat(item.longitude) }}
-                title={item.title || ""}
-                description={item.description || ""}
-                pinColor={"#"+(item.color || "FE7569")}
-                key={index}
-              />
-            )
-          })}
+          {this.props.children}
         </MapView>
       );
     }

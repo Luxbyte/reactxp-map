@@ -1,4 +1,10 @@
 'use strict';
 
 // Export web by default. Other platforms have custom index.[platform].js files
-module.exports = require('./dist/web/Map.js');
+var ReactXPMap = require('./dist/web/Map');
+var Marker = require('./dist/web/Marker');
+
+module.exports = {
+  ReactXPMap,
+  Marker
+}
