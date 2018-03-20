@@ -1,9 +1,8 @@
 # reactxp-map [![npm version](https://img.shields.io/npm/v/reactxp-map.svg?style=flat)](https://www.npmjs.com/package/reactxp-map)
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
-## Updates (Version 0.1.0)
-* Reorganized Markers as components
-* Added onPress callback to markers
+## Updates (Version 0.1.1)
+* Added Directions component
 
 ## Documentation
 
@@ -22,9 +21,10 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
   locationText="You are here!"
   apiKey="YOUR_API_KEY"
 >
-  <Marker latitude={49.6106573} longitude={6.1293375} title="Hello World" description="test" color="00c00c" onPress={this.showMessage}/>
-  <Marker latitude={50} longitude={6} title="title2" description="test2" color="2fb6ab" onPress={this.showMessage}/>
-  <Marker latitude={49.5} longitude={6.2} title="title3" description="test3" onPress={this.showMessage}/>
+  <Marker latitude={49.6119289} longitude={6.1370552} title="Luxembourg City" description="Capital city of Luxembourg" color="00c00c" onPress={this.showMessage}/>
+  <Marker latitude={49.6285071} longitude={6.2148438} title="Luxembourg Airport" color="2fb6ab" onPress={this.showMessage}/>
+  <Direction destination={{latitude: 49.6119289, longitude: 6.1370552}}/>
+  <Direction origin={{latitude: 49.6002236, longitude: 6.1333581}} destination={{latitude: 49.609966, longitude: 6.129702}} travelMode="walking" strokeColor="red" strokeWidth={3}/>
 </ReactXPMap>
 ```
 
@@ -49,6 +49,15 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | description  | String          | ""       | Description of the marker (Native only) |
 | color        | HexCode         | "FE7569" | Color of the marker |
 | onPress      | Function        |          | Callback that is triggered when pressing on the marker. Returns `{latitude, longitude}` |
+
+### Direction Properties
+| Prop         | Type            | Default  | Note |
+|--------------|-----------------|----------|------|
+| origin       | LatLng          | null     | Latitude and longitude of the starting point. If null, it uses current user location |
+| destination  | LatLng          |          | Latitude and longitude of the destination point |
+| travelMode   | String          | "driving"| Travel method. Can be "driving", "walking", "transit" or "bicycling" |
+| strokeColor  | String          | "black"  | Color of the polyline |
+| strokeWidth  | Integer         | 3        | Width of the polyline in pixels |
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
