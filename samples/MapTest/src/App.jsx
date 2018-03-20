@@ -5,7 +5,7 @@
 let React, RX;
 React = RX = require('reactxp');
 
-let { ReactXPMap, Marker } = require('reactxp-map');
+let { ReactXPMap, Marker, Direction } = require('reactxp-map');
 
 const _styles = {
   container: RX.Styles.createViewStyle({
@@ -35,9 +35,10 @@ class App extends RX.Component {
         locationText="You are here!"
         apiKey="YOUR_API_KEY"
       >
-        <Marker latitude={49.6106573} longitude={6.1293375} title="Hello World" description="test" color="00c00c" onPress={this.showMessage}/>
-        <Marker latitude={50} longitude={6} title="title2" description="test2" color="2fb6ab" onPress={this.showMessage}/>
-        <Marker latitude={49.5} longitude={6.2} title="title3" description="test3" onPress={this.showMessage}/>
+        <Marker latitude={49.6119289} longitude={6.1370552} title="Luxembourg City" description="Capital city of Luxembourg" color="00c00c" onPress={this.showMessage}/>
+        <Marker latitude={49.6285071} longitude={6.2148438} title="Luxembourg Airport" color="2fb6ab" onPress={this.showMessage}/>
+        <Direction destination={{latitude: 49.6119289, longitude: 6.1370552}}/>
+        <Direction origin={{latitude: 49.6002236, longitude: 6.1333581}} destination={{latitude: 49.609966, longitude: 6.129702}} travelMode="walking" strokeColor="red" strokeWidth={3}/>
       </ReactXPMap>
     );
   }

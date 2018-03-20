@@ -13,6 +13,12 @@ let Marker = require('./Marker');
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps"
 
 const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
+
+  // pass google.maps and current location to child components
+  let childrenWithProps = React.Children.map(props.children, child =>
+    React.cloneElement(child, { location: props.location, googleMap: google.maps })
+  );
+
   return (
     <GoogleMap
       ref={(ref)=>props.getMap(ref, google.maps.event.trigger)}
@@ -29,7 +35,7 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
                 title={props.locationText || "Your current location"}
         />
       }
-      {props.children}
+      {childrenWithProps}
     </GoogleMap>
   )
 }));
@@ -42,6 +48,15 @@ class ReactXPMap extends React.Component {
     this.eventTrigger = null;
     this.googleMap = null;
 
+    // check if component contains Direction child
+    this.containsDirections = false;
+    for (var i = 0; i < this.props.children.length; i++) {
+      if (this.props.children[i].type.name == "Direction") {
+        this.containsDirections = true;
+        break;
+      }
+    }
+
     this.state = {
       location: null
     }
@@ -50,7 +65,7 @@ class ReactXPMap extends React.Component {
   // On mount: start watching user location if requested
   componentDidMount = () => {
     let self = this;
-    if (this.props.showLocation) {
+    if (this.props.showLocation || this.containsDirections) {
       RX.Location.getCurrentPosition({}).then(function(position) {
         self.setState({location: {latitude: position.coords.latitude, longitude: position.coords.longitude}});
       });
@@ -62,7 +77,7 @@ class ReactXPMap extends React.Component {
 
   // stop watching user location
   componentWillUnmount = () => {
-    if (this.props.showLocation) {
+    if (this.locationWatchId) {
       RX.Location.clearWatch(this.locationWatchId);
     }
   }

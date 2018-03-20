@@ -89,6 +89,12 @@ class ReactXPMap extends React.Component {
 
   render() {
     let mapView = null;
+
+    // pass google.maps and current location to child components
+    let childrenWithProps = React.Children.map(this.props.children, child =>
+      React.cloneElement(child, { location: this.state.location, apiKey: this.props.apiKey })
+    );
+
     if (this.state.layout) {
       let delta = this.getDeltaFromZoom(this.props.zoom || 8);
       mapView = (
@@ -109,7 +115,7 @@ class ReactXPMap extends React.Component {
                     title={this.props.locationText|| "Your current location"}
             />
           }
-          {this.props.children}
+          {childrenWithProps}
         </MapView>
       );
     }
