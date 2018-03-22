@@ -1,7 +1,8 @@
 # reactxp-map [![npm version](https://img.shields.io/npm/v/reactxp-map.svg?style=flat)](https://www.npmjs.com/package/reactxp-map)
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
-## Updates (Version 0.1.1)
+## Updates (Version 0.1.2)
+* Added geolocation prop (needs to be enabled for location tracking)
 * Added Directions component
 
 ## Documentation
@@ -17,6 +18,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
   mapType="roadmap"
   latitude={49.6106573}
   longitude={6.1293375}
+  geolocation={true}
   showLocation={true}
   locationText="You are here!"
   apiKey="YOUR_API_KEY"
@@ -35,6 +37,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | longitude    | Float           |          | Initial longitude of the map |
 | zoom         | Integer         | 8        | Initial zoom level of the map |
 | mapType      | String          | "roadmap" | Type of the map. Can be `"roadmap"`, `"satellite"`, `"hybrid"` or `"terrain"`. |
+| geolocation  | Boolean         | false    | Enable/Disable location tracking |
 | showLocation | Boolean         | false    | Enable location tracking if available |
 | locationText | String          | "Your current location" | Text displayed by the marker on the user location |
 | apiKey       | String          | "YOUR_API_KEY" | The Google maps [API key](https://developers.google.com/maps/documentation/javascript/get-api-key) |
