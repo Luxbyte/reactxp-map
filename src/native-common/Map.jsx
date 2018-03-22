@@ -44,7 +44,7 @@ class ReactXPMap extends React.Component {
   // On mount: start watching user location if requested
   componentDidMount = () => {
     let self = this;
-    if (this.props.showLocation) {
+    if (this.props.geolocation) {
       RX.Location.getCurrentPosition({}).then(function(position) {
         self.setState({location: {latitude: position.coords.latitude, longitude: position.coords.longitude}});
       });

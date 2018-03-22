@@ -31,6 +31,7 @@ class App extends RX.Component {
         mapType="roadmap"
         latitude={49.6106573}
         longitude={6.1293375}
+        geolocation={true}
         showLocation={true}
         locationText="You are here!"
         apiKey="YOUR_API_KEY"

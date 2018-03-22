@@ -48,15 +48,6 @@ class ReactXPMap extends React.Component {
     this.eventTrigger = null;
     this.googleMap = null;
 
-    // check if component contains Direction child
-    this.containsDirections = false;
-    for (var i = 0; i < this.props.children.length; i++) {
-      if (this.props.children[i].type.name == "Direction") {
-        this.containsDirections = true;
-        break;
-      }
-    }
-
     this.state = {
       location: null
     }
@@ -65,7 +56,7 @@ class ReactXPMap extends React.Component {
   // On mount: start watching user location if requested
   componentDidMount = () => {
     let self = this;
-    if (this.props.showLocation || this.containsDirections) {
+    if (this.props.geolocation) {
       RX.Location.getCurrentPosition({}).then(function(position) {
         self.setState({location: {latitude: position.coords.latitude, longitude: position.coords.longitude}});
       });
