@@ -1,9 +1,8 @@
 # reactxp-map [![npm version](https://img.shields.io/npm/v/reactxp-map.svg?style=flat)](https://www.npmjs.com/package/reactxp-map)
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
-## Updates (Version 0.1.2)
-* Added geolocation prop (needs to be enabled for location tracking)
-* Added Directions component
+## Updates (Version 0.1.3)
+* Fixed bug that caused map to reposition itself after geolocation updates
 
 ## Documentation
 

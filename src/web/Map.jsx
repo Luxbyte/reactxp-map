@@ -23,9 +23,8 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
     <GoogleMap
       ref={(ref)=>props.getMap(ref, google.maps.event.trigger)}
       defaultZoom={8}
-      defaultCenter={{ lat: props.la, lng: props.lng }}
+      defaultCenter={{ lat: props.lat, lng: props.lng }}
       zoom={props.zoom}
-      center={{ lat: props.lat, lng: props.lng }}
       defaultMapTypeId={'roadmap'}
       mapTypeId={props.mapType}
     >
