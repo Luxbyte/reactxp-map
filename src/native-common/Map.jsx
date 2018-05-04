@@ -112,7 +112,8 @@ class ReactXPMap extends React.Component {
           {this.props.showLocation && this.state.location &&
             <Marker latitude={this.state.location.latitude}
                     longitude={this.state.location.longitude}
-                    title={this.props.locationText|| "Your current location"}
+                    title={this.props.locationText || "Your current location"}
+                    icon={this.props.locationIcon}
             />
           }
           {childrenWithProps}

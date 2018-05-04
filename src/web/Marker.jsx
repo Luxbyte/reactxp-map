@@ -20,10 +20,12 @@ class Marker extends React.Component {
   }
 
   render() {
+    let icon = (this.props.icon) ? this.props.icon : "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|"+(this.props.color || "FE7569");
+
     return (
       <MapMarker position={{ lat: this.props.latitude, lng: this.props.longitude }}
                  title={this.props.title}
-                 icon={"https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|"+(this.props.color || "FE7569")}
+                 icon={icon}
                  onClick={(e) => this.getCoordinate(e, this.props.onPress)}
       />
     );

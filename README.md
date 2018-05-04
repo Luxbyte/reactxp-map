@@ -1,13 +1,17 @@
 # reactxp-map [![npm version](https://img.shields.io/npm/v/reactxp-map.svg?style=flat)](https://www.npmjs.com/package/reactxp-map)
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
-## Updates (Version 0.1.3)
-* Fixed bug that caused map to reposition itself after geolocation updates
+## Updates (Version 0.1.4)
+* Added `enableWebControls` prop (disabled web controls by default)
+* Added `icon` prop for markers
 
 ## Documentation
 
 ### Prerequisites
 * [ReactXP](https://github.com/microsoft/reactxp/)
+
+### Samples
+* [MapText](https://github.com/Fulanko/reactxp-map/tree/master/samples/MapTest)
 
 ### Usage
 ```javascript
@@ -37,8 +41,10 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | zoom         | Integer         | 8        | Initial zoom level of the map |
 | mapType      | String          | "roadmap" | Type of the map. Can be `"roadmap"`, `"satellite"`, `"hybrid"` or `"terrain"`. |
 | geolocation  | Boolean         | false    | Enable/Disable location tracking |
-| showLocation | Boolean         | false    | Enable location tracking if available |
+| showLocation | Boolean         | false    | Display current location |
 | locationText | String          | "Your current location" | Text displayed by the marker on the user location |
+| locationIcon | Image           |          | Image to use as a marker icon |
+| enableWebControls | Boolean    | false    | Enables default google maps controls on web (web only) |
 | apiKey       | String          | "YOUR_API_KEY" | The Google maps [API key](https://developers.google.com/maps/documentation/javascript/get-api-key) |
 | style        | StyleObject     | {} | [ReactXP style object](https://microsoft.github.io/reactxp/docs/styles.html) |
 
@@ -50,6 +56,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | title        | String          | ""       | Title of the marker |
 | description  | String          | ""       | Description of the marker (Native only) |
 | color        | HexCode         | "FE7569" | Color of the marker |
+| icon         | Image           |          | Image to use as a marker icon |
 | onPress      | Function        |          | Callback that is triggered when pressing on the marker. Returns `{latitude, longitude}` |
 
 ### Direction Properties

@@ -22,5 +22,5 @@ Set the API key by replacing `YOUR_API_KEY` in:
 
 ### Building for React Native
 
-- In a command prompt run `npm run rn.watch`. This transpiles the ES6 code and watches for changes
-- In a command prompt run `npm android` or `npm ios`. This starts the React Native Packager and deploys your application.
+- Run `npm run rn-watch`. This transpiles the ES6 code and watches for changes
+- In another command prompt run `npm run android` or `npm run ios`. This starts the React Native Packager and deploys your application.

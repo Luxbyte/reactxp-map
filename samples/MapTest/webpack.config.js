@@ -8,6 +8,9 @@ module.exports = {
     path: __dirname + "/dist"
   },
   resolve: {
+    alias: {
+      appAssets: path.resolve(__dirname, 'src/web/appAssets')
+    },
     extensions: [".js", ".jsx"]
   },
   module: {
@@ -17,6 +20,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
+          babelrc: false,
           presets: ['es2015', 'react', 'stage-1']
         }
       }

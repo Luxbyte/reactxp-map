@@ -7,6 +7,8 @@ React = RX = require('reactxp');
 
 let { ReactXPMap, Marker, Direction } = require('reactxp-map');
 
+let currentLocationIcon = require('appAssets').currentLocationIcon;
+
 const _styles = {
   container: RX.Styles.createViewStyle({
     flex: 1
@@ -34,6 +36,7 @@ class App extends RX.Component {
         geolocation={true}
         showLocation={true}
         locationText="You are here!"
+        locationIcon={currentLocationIcon}
         apiKey="YOUR_API_KEY"
       >
         <Marker latitude={49.6119289} longitude={6.1370552} title="Luxembourg City" description="Capital city of Luxembourg" color="00c00c" onPress={this.showMessage}/>

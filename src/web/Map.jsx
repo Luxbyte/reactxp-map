@@ -19,6 +19,18 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
     React.cloneElement(child, { location: props.location, googleMap: google.maps })
   );
 
+  // enable / disable web controls
+  let controls = (props.enableWebControls) ? {
+    mapTypeControl: true,
+    fullscreenControl: true,
+    streetViewControl: true,
+    zoomControl: true
+  } : {
+    mapTypeControl: false,
+    fullscreenControl: false,
+    streetViewControl: false,
+    zoomControl: false
+  };
   return (
     <GoogleMap
       ref={(ref)=>props.getMap(ref, google.maps.event.trigger)}
@@ -27,10 +39,12 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
       zoom={props.zoom}
       defaultMapTypeId={'roadmap'}
       mapTypeId={props.mapType}
+      options={controls}
     >
       {props.showLocation && props.location &&
         <Marker latitude={props.location.latitude}
                 longitude={props.location.longitude}
+                icon={props.locationIcon}
                 title={props.locationText || "Your current location"}
         />
       }
@@ -103,6 +117,8 @@ class ReactXPMap extends React.Component {
         showLocation={this.props.showLocation}
         location={this.state.location}
         locationText={this.props.locationText}
+        locationIcon={this.props.locationIcon}
+        enableWebControls={this.props.enableWebControls || false}
         getMap={this.getMap}
         googleMapURL={"https://maps.googleapis.com/maps/api/js?key="+this.props.apiKey+"&v=3.exp&libraries=geometry,drawing,places"}
         loadingElement={<div style={{ height: `100%` }} />}

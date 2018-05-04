@@ -4,7 +4,7 @@
         "noResolve": false,
         "jsx": "react",
         "module": "commonjs",
-        "target": "es5",
+        "target": "es6",
         "experimentalDecorators": true,
         "noImplicitAny": true,
         "allowJs": true,
