@@ -56,7 +56,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 ### Map methods
 | Method          | Arguments                               | Note                    |
 |-----------------|-----------------------------------------|-------------------------|
-| panToCoordinate | lat: Float, lng Float, duration: Number | Duration is native-only |
+| panToCoordinate | lat: `Float`, lng: `Float`, duration: `Number` | Duration is native-only |
 
 ### Marker Properties
 | Prop         | Type            | Default  | Note |
@@ -67,7 +67,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | description  | String          | ""       | Description of the marker (Native only) |
 | color        | HexCode         | "FE7569" | Color of the marker |
 | icon         | Image           |          | Image to use as a marker icon |
-| zIndex       | Ineger          | 0        | Depth at which marker is drawn |
+| zIndex       | Integer         | 0        | Depth at which marker is drawn |
 | onPress      | Function        |          | Callback that is triggered when pressing on the marker. Returns `{latitude, longitude}` |
 
 ### Direction Properties
