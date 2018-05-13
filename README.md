@@ -2,6 +2,9 @@
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
 ## Updates
+### Version 0.1.6
+* Added `getBounds` method to map
+
 ### Version 0.1.5
 * Added `panToCoordinate` method to map
 * Added `zIndex` prop for markers
@@ -57,6 +60,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | Method          | Arguments                               | Note                    |
 |-----------------|-----------------------------------------|-------------------------|
 | panToCoordinate | lat: Float, lng Float, duration: Number | Duration is native-only |
+| getBounds       |                                         | Returns LatLng of southwestern and northeastern point of the view |
 
 ### Marker Properties
 | Prop         | Type            | Default  | Note |

@@ -87,6 +87,28 @@ class ReactXPMap extends React.Component {
     return {latitude, longitude};
   }
 
+  // return correct latitude value
+  _getLatitude = (lat) => {
+    if (lat > 90) {
+      return -180 + lat;
+    }
+    if (lat < -90) {
+      return 180 + lat;
+    }
+    return lat;
+  }
+
+  // return correct longitude value
+  _getLongitude = (lng) => {
+    if (lng > 180) {
+      return -360 + lng;
+    }
+    if (lng < -180) {
+      return 360 + lng;
+    }
+    return lng;
+  }
+
   _onRef = (ref) => {
     this.map = ref;
   }
@@ -94,6 +116,25 @@ class ReactXPMap extends React.Component {
   // pan view to given coordinates in given time
   panToCoordinate = (latitude, longitude, duration) => {
     this.map.animateToCoordinate({latitude, longitude}, duration || 100);
+  }
+
+  // return southwest and northeast point of view
+  getBounds = () => {
+    if (this.map) {
+      let region = this.map.__lastRegion;
+      return {
+        sw: {
+          lat: this._getLatitude(region.latitude - 0.5 * region.latitudeDelta),
+          lng: this._getLongitude(region.longitude - 0.5 * region.longitudeDelta)
+        },
+        ne: {
+          lat: this._getLatitude(region.latitude + 0.5 * region.latitudeDelta),
+          lng: this._getLongitude(region.longitude + 0.5 * region.longitudeDelta)
+        }
+      };
+    } else {
+      return null;
+    }
   }
 
   render() {

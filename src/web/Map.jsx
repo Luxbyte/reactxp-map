@@ -112,6 +112,21 @@ class ReactXPMap extends React.Component {
     this.googleMap.panTo({lat, lng});
   }
 
+  // return southwest and northeast point of view
+  getBounds = () => {
+    let bounds = this.googleMap.getBounds();
+    return {
+      sw: {
+        lat: bounds.f.b,
+        lng: bounds.b.b
+      },
+      ne: {
+        lat: bounds.f.f,
+        lng: bounds.b.f
+      }
+    }
+  }
+
   render() {
     return (
       <GoogleMapComponent
