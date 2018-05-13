@@ -26,6 +26,7 @@ class Marker extends React.Component {
                  description={this.props.description}
                  pinColor={"#"+(this.props.color || "FE7569")}
                  image={this.props.icon}
+                 style={{zIndex: this.props.zIndex || 0}}
                  onPress={(e) => this.getCoordinate(e.nativeEvent, this.props.onPress)}
       />
     );

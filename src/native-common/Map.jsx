@@ -48,7 +48,7 @@ class ReactXPMap extends React.Component {
       RX.Location.getCurrentPosition({}).then(function(position) {
         self.setState({location: {latitude: position.coords.latitude, longitude: position.coords.longitude}});
       });
-      RX.Location.watchPosition(this.onUpdatePosition, this.onError, {}).then(function(locationWatchId) {
+      RX.Location.watchPosition(this._onUpdatePosition, this.onError, {}).then(function(locationWatchId) {
         self.locationWatchId = locationWatchId;
       });
     }
@@ -62,17 +62,17 @@ class ReactXPMap extends React.Component {
   }
 
   // update user location
-  onUpdatePosition = (position) => {
+  _onUpdatePosition = (position) => {
     this.setState({location: {latitude: position.coords.latitude, longitude: position.coords.longitude}});
   }
 
   // rerender if layout changes (e.g. orientation change)
-  onLayout = (layoutInfo) => {
+  _onLayout = (layoutInfo) => {
     this.setState({layout: {...layoutInfo}});
   }
 
   // calculate latitude delta and longitude delta using provided zoomLevel
-  getDeltaFromZoom = (zoom) => {
+  _getDeltaFromZoom = (zoom) => {
     const ratio = 156543.03392;
     const latPerMeter = 111111;
     const zoomCorrection = 2;
@@ -87,6 +87,15 @@ class ReactXPMap extends React.Component {
     return {latitude, longitude};
   }
 
+  _onRef = (ref) => {
+    this.map = ref;
+  }
+
+  // pan view to given coordinates in given time
+  panToCoordinate = (latitude, longitude, duration) => {
+    this.map.animateToCoordinate({latitude, longitude}, duration || 100);
+  }
+
   render() {
     let mapView = null;
 
@@ -96,7 +105,7 @@ class ReactXPMap extends React.Component {
     );
 
     if (this.state.layout) {
-      let delta = this.getDeltaFromZoom(this.props.zoom || 8);
+      let delta = this._getDeltaFromZoom(this.props.zoom || 8);
       mapView = (
         <MapView
           style={ _styles.map }
@@ -108,6 +117,7 @@ class ReactXPMap extends React.Component {
           }}
           provider="google"
           mapType={MapType[this.props.mapType] || "standard"}
+          ref={this._onRef}
         >
           {this.props.showLocation && this.state.location &&
             <Marker latitude={this.state.location.latitude}
@@ -122,7 +132,7 @@ class ReactXPMap extends React.Component {
     }
 
     return (
-      <RX.View style={ this.props.style } onLayout={this.onLayout}>
+      <RX.View style={ this.props.style } onLayout={this._onLayout}>
         {mapView}
       </RX.View>
     );

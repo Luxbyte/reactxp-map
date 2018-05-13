@@ -26,6 +26,7 @@ class Marker extends React.Component {
       <MapMarker position={{ lat: this.props.latitude, lng: this.props.longitude }}
                  title={this.props.title}
                  icon={icon}
+                 zIndex={this.props.zIndex || 0}
                  onClick={(e) => this.getCoordinate(e, this.props.onPress)}
       />
     );

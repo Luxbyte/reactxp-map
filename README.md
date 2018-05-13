@@ -1,7 +1,12 @@
 # reactxp-map [![npm version](https://img.shields.io/npm/v/reactxp-map.svg?style=flat)](https://www.npmjs.com/package/reactxp-map)
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
-## Updates (Version 0.1.4)
+## Updates
+### Version 0.1.5
+* Added `panToCoordinate` method to map
+* Added `zIndex` prop for markers
+
+### Version 0.1.4
 * Added `enableWebControls` prop (disabled web controls by default)
 * Added `icon` prop for markers
 
@@ -48,6 +53,11 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | apiKey       | String          | "YOUR_API_KEY" | The Google maps [API key](https://developers.google.com/maps/documentation/javascript/get-api-key) |
 | style        | StyleObject     | {} | [ReactXP style object](https://microsoft.github.io/reactxp/docs/styles.html) |
 
+### Map methods
+| Method          | Arguments                               | Note                    |
+|-----------------|-----------------------------------------|-------------------------|
+| panToCoordinate | lat: Float, lng Float, duration: Number | Duration is native-only |
+
 ### Marker Properties
 | Prop         | Type            | Default  | Note |
 |--------------|-----------------|----------|------|
@@ -57,6 +67,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | description  | String          | ""       | Description of the marker (Native only) |
 | color        | HexCode         | "FE7569" | Color of the marker |
 | icon         | Image           |          | Image to use as a marker icon |
+| zIndex       | Ineger          | 0        | Depth at which marker is drawn |
 | onPress      | Function        |          | Callback that is triggered when pressing on the marker. Returns `{latitude, longitude}` |
 
 ### Direction Properties

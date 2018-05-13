@@ -18,11 +18,20 @@ const _styles = {
 class App extends RX.Component {
   constructor(props) {
     super(props);
+
+    // bug in react-native
+    // @see: https://github.com/facebook/react-native/issues/9599
+    if (typeof global.self === 'undefined') {
+      global.self = global;
+    }
   }
 
-  showMessage = (e) => {
-    console.log('pressed!')
-    console.log(e)
+  onPressMarker = (e) => {
+    this.map.panToCoordinate(e.latitude, e.longitude);
+  }
+
+  _onRef = (ref) => {
+    this.map = ref;
   }
 
   render() {
@@ -38,9 +47,10 @@ class App extends RX.Component {
         locationText="You are here!"
         locationIcon={currentLocationIcon}
         apiKey="YOUR_API_KEY"
+        ref={this._onRef}
       >
-        <Marker latitude={49.6119289} longitude={6.1370552} title="Luxembourg City" description="Capital city of Luxembourg" color="00c00c" onPress={this.showMessage}/>
-        <Marker latitude={49.6285071} longitude={6.2148438} title="Luxembourg Airport" color="2fb6ab" onPress={this.showMessage}/>
+        <Marker latitude={49.6119289} longitude={6.1370552} title="Luxembourg City" description="Capital city of Luxembourg" color="00c00c" onPress={this.onPressMarker}/>
+        <Marker latitude={49.6285071} longitude={6.2148438} title="Luxembourg Airport" color="2fb6ab" onPress={this.onPressMarker}/>
         <Direction destination={{latitude: 49.6119289, longitude: 6.1370552}}/>
         <Direction origin={{latitude: 49.6002236, longitude: 6.1333581}} destination={{latitude: 49.609966, longitude: 6.129702}} travelMode="walking" strokeColor="red" strokeWidth={3}/>
       </ReactXPMap>

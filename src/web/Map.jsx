@@ -73,7 +73,7 @@ class ReactXPMap extends React.Component {
       RX.Location.getCurrentPosition({}).then(function(position) {
         self.setState({location: {latitude: position.coords.latitude, longitude: position.coords.longitude}});
       });
-      RX.Location.watchPosition(this.onUpdatePosition, this.onError, {}).then(function(locationWatchId) {
+      RX.Location.watchPosition(this._onUpdatePosition, this.onError, {}).then(function(locationWatchId) {
         self.locationWatchId = locationWatchId;
       });
     }
@@ -94,17 +94,22 @@ class ReactXPMap extends React.Component {
   }
 
   // update user location
-  onUpdatePosition = (position) => {
+  _onUpdatePosition = (position) => {
     this.setState({location: {latitude: position.coords.latitude, longitude: position.coords.longitude}});
   }
 
   // get googleMap object from reference
   // this is needed in order to trigger resize events on the map
-  getMap = (ref, trigger) => {
+  _getMap = (ref, trigger) => {
     if (ref) {
       this.googleMap = ref.context['__SECRET_MAP_DO_NOT_USE_OR_YOU_WILL_BE_FIRED'];
       this.eventTrigger = trigger;
     }
+  }
+
+  // pan view to given coordinates
+  panToCoordinate = (lat, lng, duration) => {
+    this.googleMap.panTo({lat, lng});
   }
 
   render() {
@@ -119,7 +124,7 @@ class ReactXPMap extends React.Component {
         locationText={this.props.locationText}
         locationIcon={this.props.locationIcon}
         enableWebControls={this.props.enableWebControls || false}
-        getMap={this.getMap}
+        getMap={this._getMap}
         googleMapURL={"https://maps.googleapis.com/maps/api/js?key="+this.props.apiKey+"&v=3.exp&libraries=geometry,drawing,places"}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<RX.View style={this.props.style || {}} />}
