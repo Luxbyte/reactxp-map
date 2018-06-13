@@ -12,22 +12,22 @@ import { Marker as MapMarker } from 'react-native-maps';
 
 class Marker extends React.Component {
 
-  getCoordinate = (e, callback) => {
+  getCoordinate = (coordinate, callback) => {
     if (callback) {
-      let coordinate = {latitude: e.coordinate.latitude, longitude: e.coordinate.longitude};
       return callback(coordinate);
     }
   }
 
   render() {
+    let coordinate = { latitude: this.props.latitude, longitude: this.props.longitude };
     return (
-      <MapMarker coordinate={{ latitude: this.props.latitude, longitude: this.props.longitude }}
+      <MapMarker coordinate={coordinate}
                  title={this.props.title}
                  description={this.props.description}
                  pinColor={"#"+(this.props.color || "FE7569")}
                  image={this.props.icon}
                  style={{zIndex: this.props.zIndex || 0}}
-                 onPress={(e) => this.getCoordinate(e.nativeEvent, this.props.onPress)}
+                 onPress={(e) => this.getCoordinate(coordinate, this.props.onPress)}
       />
     );
   }
