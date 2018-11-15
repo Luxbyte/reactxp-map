@@ -51,6 +51,7 @@ class App extends RX.Component {
       >
         <Marker latitude={49.6119289} longitude={6.1370552} title="Luxembourg City" description="Capital city of Luxembourg" color="00c00c" onPress={this.onPressMarker}/>
         <Marker latitude={49.6285071} longitude={6.2148438} title="Luxembourg Airport" color="2fb6ab" onPress={this.onPressMarker}/>
+        <Marker latitude={49.6200000} longitude={6.1800000} title="Draggable Pin" color="227093" draggable={true} />
         <Direction destination={{latitude: 49.6119289, longitude: 6.1370552}}/>
         <Direction origin={{latitude: 49.6002236, longitude: 6.1333581}} destination={{latitude: 49.609966, longitude: 6.129702}} travelMode="walking" strokeColor="red" strokeWidth={3}/>
       </ReactXPMap>
