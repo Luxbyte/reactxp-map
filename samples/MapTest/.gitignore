@@ -54,3 +54,5 @@ fastlane/screenshots
 
 .vscode
 dist/
+
+Pods/

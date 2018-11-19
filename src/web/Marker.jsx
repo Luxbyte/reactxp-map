@@ -28,6 +28,10 @@ class Marker extends React.Component {
                  icon={icon}
                  zIndex={this.props.zIndex || 0}
                  onClick={(e) => this.getCoordinate(e, this.props.onPress)}
+                 draggable={this.props.draggable}
+                 onDragStart={(e) => this.getCoordinate(e, this.props.onDragStart)}
+                 onDrag={(e) => this.getCoordinate(e, this.props.onDrag)}
+                 onDragEnd={(e) => this.getCoordinate(e, this.props.onDragEnd)}
       />
     );
   }
