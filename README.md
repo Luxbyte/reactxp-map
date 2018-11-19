@@ -2,6 +2,11 @@
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
 ## Updates
+### Version 0.1.8
+* Added `onMapReady` method to map
+* Added dragging support to markers
+* Fixed file permission on gradlew
+
 ### Version 0.1.7
 * Fixed `onPress` method of markers on iOS
 
@@ -56,6 +61,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | locationText | String          | "Your current location" | Text displayed by the marker on the user location |
 | locationIcon | Image           |          | Image to use as a marker icon |
 | enableWebControls | Boolean    | false    | Enables default google maps controls on web (web only) |
+| onMapReady   | Function        |          | Callback that is fired when the map has finished loading |
 | apiKey       | String          | "YOUR_API_KEY" | The Google maps [API key](https://developers.google.com/maps/documentation/javascript/get-api-key) |
 | style        | StyleObject     | {} | [ReactXP style object](https://microsoft.github.io/reactxp/docs/styles.html) |
 
@@ -75,7 +81,11 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | color        | HexCode         | "FE7569" | Color of the marker |
 | icon         | Image           |          | Image to use as a marker icon |
 | zIndex       | Integer         | 0        | Depth at which marker is drawn |
-| onPress      | Function        |          | Callback that is triggered when pressing on the marker. Returns `{latitude, longitude}` |
+| draggable    | Boolean         | false    | Enable/Disable marker dragging |
+| onPress      | Function        |          | Callback that is fired when pressing on the marker. Returns `{latitude, longitude}` |
+| onDragStart  | Function        |          | Callback that is fired at the start of dragging |
+| onDrag       | Function        |          | Callback that is fired at during dragging |
+| onDragEnd    | Function        |          | Callback that is fired at the end of dragging |
 
 ### Direction Properties
 | Prop         | Type            | Default  | Note |

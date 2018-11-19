@@ -52,6 +52,10 @@ class ReactXPMap extends React.Component {
         self.locationWatchId = locationWatchId;
       });
     }
+    // Trigger load event
+    if (this.props.onLoad) {
+      this.props.onLoad()
+    }
   }
 
   // stop watching user location
@@ -156,6 +160,7 @@ class ReactXPMap extends React.Component {
             latitudeDelta: delta.latitude,
             longitudeDelta: delta.longitude
           }}
+          onMapReady={this.props.onMapReady}
           provider="google"
           mapType={MapType[this.props.mapType] || "standard"}
           ref={this._onRef}
