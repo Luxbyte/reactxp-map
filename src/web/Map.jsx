@@ -13,7 +13,6 @@ let Marker = require('./Marker');
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps"
 
 const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
-
   // pass google.maps and current location to child components
   let childrenWithProps = React.Children.map(props.children, child =>
     React.cloneElement(child, { location: props.location, googleMap: google.maps })
@@ -31,6 +30,12 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
     streetViewControl: false,
     zoomControl: false
   };
+
+  // Trigger load event
+  if (props.onLoad) {
+    props.onLoad()
+  }
+
   return (
     <GoogleMap
       ref={(ref)=>props.getMap(ref, google.maps.event.trigger)}
@@ -133,6 +138,7 @@ class ReactXPMap extends React.Component {
         lat={this.props.latitude}
         lng={this.props.longitude}
         zoom={this.props.zoom}
+        onLoad={this.props.onLoad}
         mapType={this.props.mapType}
         showLocation={this.props.showLocation}
         location={this.state.location}

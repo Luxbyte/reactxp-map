@@ -52,6 +52,10 @@ class ReactXPMap extends React.Component {
         self.locationWatchId = locationWatchId;
       });
     }
+    // Trigger load event
+    if (this.props.onLoad) {
+      this.props.onLoad()
+    }
   }
 
   // stop watching user location
