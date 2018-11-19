@@ -23,7 +23,7 @@
   "dependencies": {
     "react": "16.2.0",
     "react-dom": "16.2.0",
-    "react-native": "^0.51.0",
+    "react-native": "^0.57.0",
     "react-native-maps-directions": "^1.6.0",
     "reactxp": "^0.51.1",
     "reactxp-map": "^0.1.7"
