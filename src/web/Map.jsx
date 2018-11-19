@@ -32,8 +32,8 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
   };
 
   // Trigger load event
-  if (props.onLoad) {
-    props.onLoad()
+  if (props.onMapReady) {
+    props.onMapReady();
   }
 
   return (
@@ -138,7 +138,7 @@ class ReactXPMap extends React.Component {
         lat={this.props.latitude}
         lng={this.props.longitude}
         zoom={this.props.zoom}
-        onLoad={this.props.onLoad}
+        onMapReady={this.props.onMapReady}
         mapType={this.props.mapType}
         showLocation={this.props.showLocation}
         location={this.state.location}

@@ -160,6 +160,7 @@ class ReactXPMap extends React.Component {
             latitudeDelta: delta.latitude,
             longitudeDelta: delta.longitude
           }}
+          onMapReady={this.props.onMapReady}
           provider="google"
           mapType={MapType[this.props.mapType] || "standard"}
           ref={this._onRef}
