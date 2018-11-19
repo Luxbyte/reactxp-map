@@ -29,9 +29,9 @@ class Marker extends React.Component {
                  style={{zIndex: this.props.zIndex || 0}}
                  onPress={(e) => this.getCoordinate(coordinate, this.props.onPress)}
                  draggable={this.props.draggable}
-                 onDragStart={(e) => this.getCoordinate(e.coordinate, this.props.onDragStart)}
-                 onDrag={(e) => this.getCoordinate(e.coordinate, this.props.onDrag)}
-                 onDragEnd={(e) => this.getCoordinate(e.coordinate, this.props.onDragEnd)}
+                 onDragStart={(e) => this.getCoordinate(e.nativeEvent.coordinate, this.props.onDragStart)}
+                 onDrag={(e) => this.getCoordinate(e.nativeEvent.coordinate, this.props.onDrag)}
+                 onDragEnd={(e) => this.getCoordinate(e.nativeEvent.coordinate, this.props.onDragEnd)}
       />
     );
   }
