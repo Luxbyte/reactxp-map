@@ -2,7 +2,7 @@
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
 ## Updates
-### Version 0.1.8
+### Version 0.1.9
 * Updated dependencies
 * Added `onPress` method to map
 
