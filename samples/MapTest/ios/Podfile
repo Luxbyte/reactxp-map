@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'RXPMapTest' do
+target 'maptest' do
   rn_path = '../node_modules/react-native'
   rn_maps_path = '../node_modules/react-native-maps'
 
@@ -17,8 +17,7 @@ target 'RXPMapTest' do
     'RCTSettings',
     'RCTText',
     'RCTVibration',
-    'RCTWebSocket',
-    'BatchedBridge'
+    'RCTWebSocket'
   ]
 
   pod 'react-native-maps', path: rn_maps_path

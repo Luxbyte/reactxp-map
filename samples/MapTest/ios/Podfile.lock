@@ -1,57 +1,67 @@
 PODS:
+  - Google-Maps-iOS-Utils (2.1.0):
+    - Google-Maps-iOS-Utils/Clustering (= 2.1.0)
+    - Google-Maps-iOS-Utils/Geometry (= 2.1.0)
+    - Google-Maps-iOS-Utils/Heatmap (= 2.1.0)
+    - Google-Maps-iOS-Utils/QuadTree (= 2.1.0)
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Clustering (2.1.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Geometry (2.1.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Heatmap (2.1.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/QuadTree (2.1.0):
+    - GoogleMaps
   - GoogleMaps (2.5.0):
     - GoogleMaps/Maps (= 2.5.0)
   - GoogleMaps/Base (2.5.0)
   - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
-  - React (0.51.1):
-    - React/Core (= 0.51.1)
-  - react-native-google-maps (0.19.0):
+  - React (0.57.7):
+    - React/Core (= 0.57.7)
+  - react-native-google-maps (0.21.0):
+    - Google-Maps-iOS-Utils (= 2.1.0)
     - GoogleMaps (= 2.5.0)
     - React
-  - react-native-maps (0.19.0):
+  - react-native-maps (0.21.0):
     - React
-  - React/BatchedBridge (0.51.1):
+  - React/Core (0.57.7):
+    - yoga (= 0.57.7.React)
+  - React/fishhook (0.57.7)
+  - React/RCTActionSheet (0.57.7):
     - React/Core
-    - React/cxxreact_legacy
-  - React/Core (0.51.1):
-    - yoga (= 0.51.1.React)
-  - React/cxxreact_legacy (0.51.1):
-    - React/jschelpers_legacy
-  - React/fishhook (0.51.1)
-  - React/jschelpers_legacy (0.51.1)
-  - React/RCTActionSheet (0.51.1):
+  - React/RCTAnimation (0.57.7):
     - React/Core
-  - React/RCTAnimation (0.51.1):
+  - React/RCTBlob (0.57.7):
     - React/Core
-  - React/RCTBlob (0.51.1):
+  - React/RCTGeolocation (0.57.7):
     - React/Core
-  - React/RCTGeolocation (0.51.1):
-    - React/Core
-  - React/RCTImage (0.51.1):
+  - React/RCTImage (0.57.7):
     - React/Core
     - React/RCTNetwork
-  - React/RCTLinkingIOS (0.51.1):
+  - React/RCTLinkingIOS (0.57.7):
     - React/Core
-  - React/RCTNetwork (0.51.1):
+  - React/RCTNetwork (0.57.7):
     - React/Core
-  - React/RCTSettings (0.51.1):
+  - React/RCTSettings (0.57.7):
     - React/Core
-  - React/RCTText (0.51.1):
+  - React/RCTText (0.57.7):
     - React/Core
-  - React/RCTVibration (0.51.1):
+  - React/RCTVibration (0.57.7):
     - React/Core
-  - React/RCTWebSocket (0.51.1):
+  - React/RCTWebSocket (0.57.7):
     - React/Core
     - React/fishhook
     - React/RCTBlob
-  - yoga (0.51.1.React)
+  - yoga (0.57.7.React)
 
 DEPENDENCIES:
   - GoogleMaps
   - react-native-google-maps (from `../node_modules/react-native-maps`)
   - react-native-maps (from `../node_modules/react-native-maps`)
-  - React/BatchedBridge (from `../node_modules/react-native`)
   - React/Core (from `../node_modules/react-native`)
   - React/RCTActionSheet (from `../node_modules/react-native`)
   - React/RCTAnimation (from `../node_modules/react-native`)
@@ -67,6 +77,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Google-Maps-iOS-Utils
     - GoogleMaps
 
 EXTERNAL SOURCES:
@@ -80,12 +91,13 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
 
 SPEC CHECKSUMS:
+  Google-Maps-iOS-Utils: c32891ff472eaaa1fca032beedafa1a013af7875
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
-  React: 541ba768b9855e10cdc76f55427a5cd0653ca806
-  react-native-google-maps: 963fc78a5ac32dad3a726e4fa08b5307faa5cab2
+  React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
+  react-native-google-maps: 2cfe3b01f8422c7dae51d8764139fd70f888cfce
   react-native-maps: 066c2afcc89e18726377bcc685315f989ca22449
-  yoga: 17521bbb0dd54a47c0b3ac43253e78cdac7488e0
+  yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 4e902df38163bb08e505e52864e6152396d50469
+PODFILE CHECKSUM: 0de076ec450d95ecfd94e703e3b2a7bc1c5155ef
 
 COCOAPODS: 1.5.3

@@ -1,4 +1,4 @@
-package com.rxpmaptest;
+package com.maptest;
 
 import android.app.Application;
 
@@ -26,6 +26,11 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
           new MapsPackage()
       );
+    }
+
+    @Override
+    protected String getJSMainModuleName() {
+      return "index";
     }
   };
 

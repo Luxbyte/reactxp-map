@@ -3,6 +3,10 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 
 ## Updates
 ### Version 0.1.8
+* Updated dependencies
+* Added `onPress` method to map
+
+### Version 0.1.8
 * Added `onMapReady` method to map
 * Added dragging support to markers
 * Fixed file permission on gradlew
@@ -62,6 +66,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 | locationIcon | Image           |          | Image to use as a marker icon |
 | enableWebControls | Boolean    | false    | Enables default google maps controls on web (web only) |
 | onMapReady   | Function        |          | Callback that is fired when the map has finished loading |
+| onPress      | Function        |          | Callback that is fired when the map is pressed. Returns `{latitude, longitude}` |
 | apiKey       | String          | "YOUR_API_KEY" | The Google maps [API key](https://developers.google.com/maps/documentation/javascript/get-api-key) |
 | style        | StyleObject     | {} | [ReactXP style object](https://microsoft.github.io/reactxp/docs/styles.html) |
 

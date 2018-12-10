@@ -4,9 +4,7 @@
 
 let React, RX;
 React = RX = require('reactxp');
-
 let { ReactXPMap, Marker, Direction } = require('reactxp-map');
-
 let currentLocationIcon = require('appAssets').currentLocationIcon;
 
 const _styles = {
@@ -26,6 +24,10 @@ class App extends RX.Component {
     }
   }
 
+  onPressMap = (e) => {
+    console.log(`Pressed map at ${e.latitude} / ${e.longitude}.`);
+  }
+
   onPressMarker = (e) => {
     this.map.panToCoordinate(e.latitude, e.longitude);
   }
@@ -42,10 +44,9 @@ class App extends RX.Component {
         mapType="roadmap"
         latitude={49.6106573}
         longitude={6.1293375}
-        geolocation={true}
-        showLocation={true}
         locationText="You are here!"
         locationIcon={currentLocationIcon}
+        onPress={this.onPressMap}
         apiKey="YOUR_API_KEY"
         ref={this._onRef}
       >

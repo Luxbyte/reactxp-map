@@ -45,6 +45,7 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
       defaultMapTypeId={'roadmap'}
       mapTypeId={props.mapType}
       options={controls}
+      onClick={(e) => props.onPress({latitude: e.latLng.lat(), longitude: e.latLng.lng()})}
     >
       {props.showLocation && props.location &&
         <Marker latitude={props.location.latitude}
@@ -144,6 +145,7 @@ class ReactXPMap extends React.Component {
         location={this.state.location}
         locationText={this.props.locationText}
         locationIcon={this.props.locationIcon}
+        onPress={this.props.onPress}
         enableWebControls={this.props.enableWebControls || false}
         getMap={this._getMap}
         googleMapURL={"https://maps.googleapis.com/maps/api/js?key="+this.props.apiKey+"&v=3.exp&libraries=geometry,drawing,places"}

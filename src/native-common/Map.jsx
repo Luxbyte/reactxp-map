@@ -9,8 +9,8 @@
 let React = require('react');
 let RX = require('reactxp');
 let ReactDOM = require('react-dom');
-let MapView = require('react-native-maps');
 let Marker = require('./Marker');
+import MapView from 'react-native-maps';
 
 const _styles = {
   map: {
@@ -160,6 +160,7 @@ class ReactXPMap extends React.Component {
             latitudeDelta: delta.latitude,
             longitudeDelta: delta.longitude
           }}
+          onPress={(e) => this.props.onPress({latitude: e.nativeEvent.coordinate.latitude, longitude: e.nativeEvent.coordinate.longitude})}
           onMapReady={this.props.onMapReady}
           provider="google"
           mapType={MapType[this.props.mapType] || "standard"}

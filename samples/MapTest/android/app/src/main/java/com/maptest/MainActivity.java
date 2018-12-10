@@ -1,4 +1,4 @@
-package com.rxpmaptest;
+package com.maptest;
 
 import com.facebook.react.ReactActivity;
 
