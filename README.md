@@ -2,6 +2,9 @@
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
 ## Updates
+### Version 0.1.10
+* Changed react-native to peer-dependency
+
 ### Version 0.1.9
 * Updated dependencies
 * Added `onPress` method to map
@@ -10,20 +13,6 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 * Added `onMapReady` method to map
 * Added dragging support to markers
 * Fixed file permission on gradlew
-
-### Version 0.1.7
-* Fixed `onPress` method of markers on iOS
-
-### Version 0.1.6
-* Added `getBounds` method to map
-
-### Version 0.1.5
-* Added `panToCoordinate` method to map
-* Added `zIndex` prop for markers
-
-### Version 0.1.4
-* Added `enableWebControls` prop (disabled web controls by default)
-* Added `icon` prop for markers
 
 ## Documentation
 
