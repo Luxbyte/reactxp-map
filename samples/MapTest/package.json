@@ -28,6 +28,6 @@
     "react-native-maps": "^0.24.2",
     "react-native-maps-directions": "^1.7.0",
     "reactxp": "^1.6.1",
-    "reactxp-map": "^0.1.11"
+    "reactxp-map": "^0.1.13"
   }
 }
