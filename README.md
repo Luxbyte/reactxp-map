@@ -9,21 +9,6 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 * Fixed Map onPress when function undefined
 * Updated dependencies
 
-### Version 0.1.13
-* Updated react-native version
-
-### Version 0.1.10
-* Changed react-native to peer-dependency
-
-### Version 0.1.9
-* Updated dependencies
-* Added `onPress` method to map
-
-### Version 0.1.8
-* Added `onMapReady` method to map
-* Added dragging support to markers
-* Fixed file permission on gradlew
-
 ## Documentation
 
 ### Prerequisites
