@@ -60,11 +60,11 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 
 [`<Direction/>` Component API](docs/direction.md)
 
-[`<Direction/>` Polyline API](docs/polyline.md)
+[`<Polyline/>` Polyline API](docs/polyline.md)
 
-[`<Direction/>` Polygon API](docs/polygon.md)
+[`<Polygon/>` Polygon API](docs/polygon.md)
 
-[`<Direction/>` Circle API](docs/circle.md)
+[`<Circle/>` Circle API](docs/circle.md)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
