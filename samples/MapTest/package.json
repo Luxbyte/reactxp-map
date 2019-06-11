@@ -10,6 +10,8 @@
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios"
   },
   "devDependencies": {
+    "@types/googlemaps": "^3.36.4",
+    "@types/markerclustererplus": "^2.1.33",
     "@types/node": "^12.0.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.2",
@@ -22,12 +24,10 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "react": "^16.6.1",
-    "react-dom": "16.6.3",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
     "react-native": "^0.59.9",
-    "react-native-maps": "^0.24.2",
-    "react-native-maps-directions": "^1.7.0",
     "reactxp": "^1.6.1",
-    "reactxp-map": "^0.1.13"
+    "reactxp-map": "0.2.0"
   }
 }

@@ -21,6 +21,9 @@ class Direction extends React.Component {
   }
 
   render() {
+    if (!this.props.origin && !this.props.location) {
+      return null;
+    }
     return <MapViewDirections origin={this.props.origin ? this.props.origin : this.props.location}
                               destination={this.props.destination}
                               apikey={this.props.apiKey}

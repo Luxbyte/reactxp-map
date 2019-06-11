@@ -4,9 +4,15 @@
 var ReactXPMap = require('./dist/web/Map');
 var Marker = require('./dist/web/Marker');
 var Direction = require('./dist/web/Direction');
+var Polyline = require('./dist/web/Polyline');
+var Polygon = require('./dist/web/Polygon');
+var Circle = require('./dist/web/Circle');
 
 module.exports = {
   ReactXPMap,
   Marker,
-  Direction
+  Direction,
+  Polyline,
+  Polygon,
+  Circle
 }

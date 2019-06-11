@@ -36,6 +36,8 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
     props.onMapReady();
   }
 
+  let onClick = (props.onPress) ? (e) => props.onPress({latitude: e.latLng.lat(), longitude: e.latLng.lng()}) : null;
+
   return (
     <GoogleMap
       ref={(ref)=>props.getMap(ref, google.maps.event.trigger)}
@@ -45,7 +47,7 @@ const GoogleMapComponent = withScriptjs(withGoogleMap(function(props) {
       defaultMapTypeId={'roadmap'}
       mapTypeId={props.mapType}
       options={controls}
-      onClick={(e) => props.onPress({latitude: e.latLng.lat(), longitude: e.latLng.lng()})}
+      onClick={onClick}
     >
       {props.showLocation && props.location &&
         <Marker latitude={props.location.latitude}

@@ -3,6 +3,13 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 
 ## Updates
 ### Version 0.1.13
+* Added Polyline
+* Added Polygon
+* Added Circle
+* Fixed Map onPress when function undefined
+* Updated dependencies
+
+### Version 0.1.13
 * Updated react-native version
 
 ### Version 0.1.10

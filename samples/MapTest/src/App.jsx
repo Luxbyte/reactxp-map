@@ -4,7 +4,7 @@
 
 let React, RX;
 React = RX = require('reactxp');
-let { ReactXPMap, Marker, Direction } = require('reactxp-map');
+let { ReactXPMap, Marker, Direction, Polyline, Polygon, Circle } = require('reactxp-map');
 let currentLocationIcon = require('appAssets').currentLocationIcon;
 
 const _styles = {
@@ -16,12 +16,6 @@ const _styles = {
 class App extends RX.Component {
   constructor(props) {
     super(props);
-
-    // bug in react-native
-    // @see: https://github.com/facebook/react-native/issues/9599
-    if (typeof global.self === 'undefined') {
-      global.self = global;
-    }
   }
 
   onPressMap = (e) => {
@@ -30,6 +24,14 @@ class App extends RX.Component {
 
   onPressMarker = (e) => {
     this.map.panToCoordinate(e.latitude, e.longitude);
+  }
+
+  onPressPolyline = (e) => {
+    console.log("Pressed Polyline");
+  }
+
+  onPressPolygon = (e) => {
+    console.log("Pressed Polygon");
   }
 
   _onRef = (ref) => {
@@ -55,6 +57,9 @@ class App extends RX.Component {
         <Marker latitude={49.6200000} longitude={6.1800000} title="Draggable Pin" color="227093" draggable={true}/>
         <Direction destination={{latitude: 49.6119289, longitude: 6.1370552}}/>
         <Direction origin={{latitude: 49.6002236, longitude: 6.1333581}} destination={{latitude: 49.609966, longitude: 6.129702}} travelMode="walking" strokeColor="red" strokeWidth={3}/>
+        <Polyline coordinates={[{latitude: 49.6002236, longitude: 6.1333581}, {latitude: 52, longitude: 7}]} strokeColor="#ff0000" strokeWidth={3} onPress={this.onPressPolyline} tappable={true}/>
+        <Polygon coordinates={[{latitude: 49.6002236, longitude: 6.1333581}, {latitude: 51, longitude: 6.5}, {latitude: 50, longitude: 5.5}]} strokeWidth={2} fillColor="#00c00c" fillOpacity={0.5} onPress={this.onPressPolygon} tappable={true}/>
+        <Circle center={{latitude: 50.6002236, longitude: 6.1333581}} radius={10000} strokeWidth={2} fillColor="#0000ff"/>
       </ReactXPMap>
     );
   }

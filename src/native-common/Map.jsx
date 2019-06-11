@@ -119,7 +119,12 @@ class ReactXPMap extends React.Component {
 
   // pan view to given coordinates in given time
   panToCoordinate = (latitude, longitude, duration) => {
-    this.map.animateToCoordinate({latitude, longitude}, duration || 100);
+    this.map.animateCamera({
+      center: {
+        latitude: latitude,
+        longitude: longitude
+      }
+    }, duration || 100);
   }
 
   // return southwest and northeast point of view
@@ -151,6 +156,7 @@ class ReactXPMap extends React.Component {
 
     if (this.state.layout) {
       let delta = this._getDeltaFromZoom(this.props.zoom || 8);
+      let onPress = (this.props.onPress) ? (e) => this.props.onPress({latitude: e.nativeEvent.coordinate.latitude, longitude: e.nativeEvent.coordinate.longitude}) : null;
       mapView = (
         <MapView
           style={ _styles.map }
@@ -160,7 +166,7 @@ class ReactXPMap extends React.Component {
             latitudeDelta: delta.latitude,
             longitudeDelta: delta.longitude
           }}
-          onPress={(e) => this.props.onPress({latitude: e.nativeEvent.coordinate.latitude, longitude: e.nativeEvent.coordinate.longitude})}
+          onPress={onPress}
           onMapReady={this.props.onMapReady}
           provider="google"
           mapType={MapType[this.props.mapType] || "standard"}
