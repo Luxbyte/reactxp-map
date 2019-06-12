@@ -15,7 +15,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 * [ReactXP](https://github.com/microsoft/reactxp/)
 
 ### Samples
-* [MapText](https://github.com/Fulanko/reactxp-map/tree/master/samples/MapTest)
+* [MapTest](https://github.com/Fulanko/reactxp-map/tree/master/samples/MapTest)
 
 ### Usage
 ```javascript
