@@ -54,5 +54,14 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 
 [`<Circle/>` Component API](docs/circle.md)
 
+## Troubleshooting
+
+### Geolocating does not work on Android
+
+Make sure you have set the ACCESS_FINE_LOCATION permission in your AndroidManifest.xml.
+
+If you are using Android API23+ you need to ask for the ACCESS_FINE_LOCATION permission at runtime.
+See https://facebook.github.io/react-native/docs/permissionsandroid for more information.
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
