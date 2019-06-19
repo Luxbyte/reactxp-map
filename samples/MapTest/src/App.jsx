@@ -50,6 +50,8 @@ class App extends RX.Component {
         locationIcon={currentLocationIcon}
         onPress={this.onPressMap}
         apiKey="YOUR_API_KEY"
+        geolocation={true}
+        showLocation={true}
         ref={this._onRef}
       >
         <Marker latitude={49.6119289} longitude={6.1370552} title="Luxembourg City" description="Capital city of Luxembourg" color="00c00c" onPress={this.onPressMarker}/>

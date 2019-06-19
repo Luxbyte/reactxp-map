@@ -11,6 +11,7 @@ let RX = require('reactxp');
 let ReactDOM = require('react-dom');
 let Marker = require('./Marker');
 import MapView from 'react-native-maps';
+import Geolocation from 'react-native-geolocation-service';
 
 const _styles = {
   map: {
@@ -45,12 +46,24 @@ class ReactXPMap extends React.Component {
   componentDidMount = () => {
     let self = this;
     if (this.props.geolocation) {
-      RX.Location.getCurrentPosition({}).then(function(position) {
-        self.setState({location: {latitude: position.coords.latitude, longitude: position.coords.longitude}});
-      });
-      RX.Location.watchPosition(this._onUpdatePosition, this.onError, {}).then(function(locationWatchId) {
-        self.locationWatchId = locationWatchId;
-      });
+      Geolocation.getCurrentPosition(
+        (position) => {
+          self.setState({location: {latitude: position.coords.latitude, longitude: position.coords.longitude}});
+          Geolocation.watchPosition(
+            (locationWatchId) => {
+              self.locationWatchId = locationWatchId;
+            },
+            (error) => {
+              console.log(error.code, error.message);
+            },
+            { enableHighAccuracy: true }
+          );
+        },
+        (error) => {
+          console.log(error.code, error.message);
+        },
+        { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+      );
     }
     // Trigger load event
     if (this.props.onLoad) {
@@ -61,7 +74,7 @@ class ReactXPMap extends React.Component {
   // stop watching user location
   componentWillUnmount = () => {
     if (this.props.showLocation) {
-      RX.Location.clearWatch(this.locationWatchId);
+      Geolocation.clearWatch(this.locationWatchId);
     }
   }
 

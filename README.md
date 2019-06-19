@@ -2,6 +2,9 @@
 Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support for Google Maps for Web, Android and iOS.
 
 ## Updates
+### Version 0.2.1
+* Use "react-native-geolocation-service" to fix crashes on Android if GPS is turned off
+
 ### Version 0.2.0
 * Added Polyline
 * Added Polygon
@@ -18,11 +21,6 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 ### Version 0.1.9
 * Updated dependencies
 * Added `onPress` method to map
-
-### Version 0.1.8
-* Added `onMapReady` method to map
-* Added dragging support to markers
-* Fixed file permission on gradlew
 
 ## Documentation
 
@@ -52,7 +50,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 </ReactXPMap>
 ```
 
-## Component API 
+## Component API
 
 [`<Map/>` Component API](docs/map.md)
 

@@ -139,6 +139,10 @@ android {
 
 dependencies {
     implementation project(':react-native-maps')
+    implementation(project(':react-native-geolocation-service')) {
+      exclude group: 'com.google.android.gms', module: 'play-services-location'
+    }
+    implementation "com.google.android.gms:play-services-location:${rootProject.ext.playServicesVersion}"
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
