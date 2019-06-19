@@ -12,23 +12,13 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 * Fixed Map onPress when function undefined
 * Updated dependencies
 
-### Version 0.1.13
-* Updated react-native version
-
-### Version 0.1.10
-* Changed react-native to peer-dependency
-
-### Version 0.1.9
-* Updated dependencies
-* Added `onPress` method to map
-
 ## Documentation
 
 ### Prerequisites
 * [ReactXP](https://github.com/microsoft/reactxp/)
 
 ### Samples
-* [MapText](https://github.com/Fulanko/reactxp-map/tree/master/samples/MapTest)
+* [MapTest](https://github.com/Fulanko/reactxp-map/tree/master/samples/MapTest)
 
 ### Usage
 ```javascript
@@ -58,11 +48,11 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 
 [`<Direction/>` Component API](docs/direction.md)
 
-[`<Polyline/>` Polyline API](docs/polyline.md)
+[`<Polyline/>` Component API](docs/polyline.md)
 
-[`<Polygon/>` Polygon API](docs/polygon.md)
+[`<Polygon/>` Component API](docs/polygon.md)
 
-[`<Circle/>` Circle API](docs/circle.md)
+[`<Circle/>` Component API](docs/circle.md)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
