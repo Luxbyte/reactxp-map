@@ -16,6 +16,7 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 
 ### Prerequisites
 * [ReactXP](https://github.com/microsoft/reactxp/)
+* [react-native-maps installation steps](https://github.com/react-native-community/react-native-maps/blob/master/docs/installation.md)
 
 ### Samples
 * [MapTest](https://github.com/Fulanko/reactxp-map/tree/master/samples/MapTest)
