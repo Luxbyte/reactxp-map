@@ -6,6 +6,10 @@ Plugin for [ReactXP](https://microsoft.github.io/reactxp/) that provides support
 npm install --save reactxp-map
 ```
 
+### Prerequisites
+* [ReactXP](https://github.com/microsoft/reactxp/)
+* [react-native-maps installation steps](https://github.com/react-native-community/react-native-maps/blob/master/docs/installation.md)
+
 ## Updates
 ### Version 0.2.1
 * Use "react-native-geolocation-service" to fix crashes on Android if GPS is turned off
@@ -18,10 +22,6 @@ npm install --save reactxp-map
 * Updated dependencies
 
 ## Documentation
-
-### Prerequisites
-* [ReactXP](https://github.com/microsoft/reactxp/)
-* [react-native-maps installation steps](https://github.com/react-native-community/react-native-maps/blob/master/docs/installation.md)
 
 ### Samples
 * [MapTest](https://github.com/Fulanko/reactxp-map/tree/master/samples/MapTest)
