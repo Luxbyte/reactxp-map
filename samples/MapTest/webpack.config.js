@@ -21,7 +21,8 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           babelrc: false,
-          presets: ['es2015', 'react', 'stage-1']
+          presets: ['@babel/preset-env'],
+          plugins: ['@babel/proposal-class-properties']
         }
       }
     ]

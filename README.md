@@ -11,6 +11,10 @@ npm install --save reactxp-map
 * [react-native-maps installation steps](https://github.com/react-native-community/react-native-maps/blob/master/docs/installation.md)
 
 ## Updates
+### Version 0.3.1
+* Migrated react-native to version 0.61.5
+* Updated dependencies
+
 ### Version 0.2.1
 * Use "react-native-geolocation-service" to fix crashes on Android if GPS is turned off
 
