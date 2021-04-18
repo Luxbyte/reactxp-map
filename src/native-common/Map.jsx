@@ -8,7 +8,6 @@
 
 let React = require('react');
 let RX = require('reactxp');
-let ReactDOM = require('react-dom');
 let Marker = require('./Marker');
 import MapView from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';

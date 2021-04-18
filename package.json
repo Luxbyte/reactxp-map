@@ -1,6 +1,6 @@
 {
   "name": "reactxp-map",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Plugin for ReactXP that provides support for Google Maps for Web, Android and iOS",
   "author": "Luxbyte <contact@luxbyte.com>",
   "repository": "github:Fulanko/reactxp-map",
@@ -12,7 +12,8 @@
     "react-google-maps": "9.4.5",
     "react-native-maps": "0.27.0",
     "react-native-maps-directions": "1.7.3",
-    "react-native-geolocation-service": "3.1.0"
+    "react-native-geolocation-service": "3.1.0",
+    "node-fetch": ">=2.6.1"
   },
   "peerDependencies": {
     "react-dom": "16.9.0",

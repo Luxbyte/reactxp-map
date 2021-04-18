@@ -6,7 +6,6 @@
 */
 
 let React = require('react');
-let ReactDOM = require('react-dom');
 
 import { Circle as MapCircle } from 'react-native-maps';
 import { hexToRgba } from '../helpers.js';

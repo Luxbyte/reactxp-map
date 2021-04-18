@@ -6,7 +6,6 @@
 */
 
 let React = require('react');
-let ReactDOM = require('react-dom');
 
 import { Polyline as MapPolyline } from 'react-native-maps';
 

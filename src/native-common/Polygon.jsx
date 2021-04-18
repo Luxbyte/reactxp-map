@@ -6,7 +6,6 @@
 */
 
 let React = require('react');
-let ReactDOM = require('react-dom');
 
 import { Polygon as MapPolygon } from 'react-native-maps';
 import { hexToRgba } from '../helpers.js';

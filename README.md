@@ -11,6 +11,10 @@ npm install --save reactxp-map
 * [react-native-maps installation steps](https://github.com/react-native-community/react-native-maps/blob/master/docs/installation.md)
 
 ## Updates
+
+### Version 0.3.3
+* Removed ReactDom from native code
+
 ### Version 0.3.1
 * Migrated react-native to version 0.61.5
 * Updated dependencies

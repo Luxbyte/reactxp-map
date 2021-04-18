@@ -6,7 +6,6 @@
 */
 
 let React = require('react');
-let ReactDOM = require('react-dom');
 
 import { Marker as MapMarker } from 'react-native-maps';
 
